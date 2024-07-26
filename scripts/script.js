@@ -58,18 +58,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const progressBar = document.querySelector(".progress__ring");
 
   hideCheckbox.addEventListener("change", function () {
-    progressBar.classList.toggle(
-      "progress__ring--hidden",
-      hideCheckbox.checked
-    );
+    progressBar.classList.toggle("progress__ring--hidden", hideCheckbox.checked);
   });
 
   // API для управления состоянием блока Progress
   window.ProgressAPI = {
     setProgress(value) {
-      value = Math.min(Math.max(value, 0), 100);
-      progressInput.value = value;
-      setProgress(value);
+      const validValue = Math.min(Math.max(value, 0), 100);
+      progressInput.value = validValue;
+      setProgress(validValue);
     },
     toggleAnimation(state) {
       animateCheckbox.checked = state;
