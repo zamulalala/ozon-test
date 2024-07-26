@@ -1,0 +1,151 @@
+:root {
+  --accent-color: #0d5cff;
+  --white-color: #fff;
+  --light-blue: #dee6ef;
+  --border-color: #000;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.progress {
+  width: 100%;
+  height: 100%;
+  max-width: 568px;
+  max-height: 568px;
+  padding: 20px;
+  background-color: var(--white-color);
+}
+
+.progress__title {
+  font-size: 1em;
+  text-align: start;
+}
+
+.progress__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 70px;
+}
+
+.progress__ring {
+  transform: rotate(-90deg);
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.7s linear;
+}
+
+.progress__ring--hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.7s, opacity 0.7s linear;
+}
+
+.progress__circle-outer {
+  transition: 2s stroke-dasharray;
+  transform-origin: 50% 50%;
+}
+
+.progress__circle-outer--rotate {
+  animation: ring-rotate-animation 1.7s infinite ease;
+}
+
+.progress__forms {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.progress__form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.progress__input {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.progress__input::-webkit-outer-spin-button,
+.progress__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.progress__input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.progress__input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.custom-checkbox {
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-checkbox__input {
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-checkbox__inner {
+  display: inline-block;
+  padding: 5px;
+  width: 50px;
+  border-radius: 20px;
+  background: var(--light-blue);
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.custom-checkbox__inner:before {
+  background: var(--white-color);
+  content: "";
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.2s;
+}
+
+.custom-checkbox.checked .custom-checkbox__inner:before {
+  left: 22px;
+}
+
+.custom-checkbox.checked .custom-checkbox__inner {
+  background: var(--accent-color);
+}
+
+@keyframes ring-rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 568px) and (orientation: landscape) {
+  .progress__container {
+    flex-direction: row;
+  }
+}
