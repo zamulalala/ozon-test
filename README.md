@@ -10,29 +10,29 @@
 - Скрытие прогресса: Возможность скрыть или показать прогресс-бар.
 - API для управления состоянием: Объект ProgressAPI предоставляет методы для управления состоянием прогресс-бара.
 
-// Установить прогресс на 50%
+_// Установить прогресс на 50%_
 
 ProgressAPI.setProgress(50);
 
-// Включить анимацию
+_// Включить анимацию_
 
 ProgressAPI.toggleAnimation(true);
 
-// Скрыть прогресс-бар
+_// Скрыть прогресс-бар_
 
 ProgressAPI.toggleVisibility(false);
 
-// Получить текущее значение прогресса
+_// Получить текущее значение прогресса_
 
 const currentProgress = ProgressAPI.getProgress();
 console.log(currentProgress);
 
-// Проверить, включена ли анимация
+_// Проверить, включена ли анимация_
 
 const isAnimating = ProgressAPI.isAnimating();
 console.log(isAnimating);
 
-// Проверить, видим ли прогресс-бар
+_// Проверить, видим ли прогресс-бар_
 
 const isVisible = ProgressAPI.isVisible();
 console.log(isVisible);
