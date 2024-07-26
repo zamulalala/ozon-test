@@ -11,22 +11,28 @@
 - API для управления состоянием: Объект ProgressAPI предоставляет методы для управления состоянием прогресс-бара.
 
 // Установить прогресс на 50%
+
 ProgressAPI.setProgress(50);
 
 // Включить анимацию
+
 ProgressAPI.toggleAnimation(true);
 
 // Скрыть прогресс-бар
+
 ProgressAPI.toggleVisibility(false);
 
 // Получить текущее значение прогресса
+
 const currentProgress = ProgressAPI.getProgress();
 console.log(currentProgress);
 
 // Проверить, включена ли анимация
+
 const isAnimating = ProgressAPI.isAnimating();
 console.log(isAnimating);
 
 // Проверить, видим ли прогресс-бар
+
 const isVisible = ProgressAPI.isVisible();
 console.log(isVisible);
